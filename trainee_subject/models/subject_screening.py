@@ -2,7 +2,6 @@ from trainee_subject.models.model_mixins.search_slug_model_mixin import SearchSl
 from trainee_subject.subject_identifier import ScreeningIdentifier
 from ..eligibility import Eligibility
 from django.db import models
-from django.apps import apps as django_apps
 from edc_base.model_managers import HistoricalRecords
 from edc_base.sites import CurrentSiteManager,SiteModelMixin
 from edc_base.model_mixins import BaseUuidModel
