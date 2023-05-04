@@ -47,7 +47,7 @@ edc-senaite-interface @ git+https://github.com/botswana-harvard/edc-senaite-inte
 edc-sms @ git+https://github.com/botswana-harvard/edc-sms.git@488e609263bbccbeaa85da7a3adf49132304d323
 edc-subject-dashboard @ git+https://github.com/botswana-harvard/edc-subject-dashboard.git@2933ac9ce87f7a9dd5698f5e6cead12d0205aad8
 edc-timepoint @ git+https://github.com/botswana-harvard/edc-timepoint.git@2231996b42606a422ef4763c3ab388cddf38abbe
-edc-utils==0.3.19
+edc-utils==0.3.1
 edc-visit-schedule @ git+https://github.com/botswana-harvard/edc-visit-schedule.git@71588bc1e9f1e5218ab524940b11c4ec406fee9f
 edc-visit-tracking @ git+https://github.com/botswana-harvard/edc-visit-tracking.git@61f7ccd1ce3f4b078a389b844029ef1263469ec2
 Faker==18.5.1
