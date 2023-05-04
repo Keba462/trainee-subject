@@ -80,7 +80,6 @@ class SubjectConsentAdmin(ModelAdminBasicMixin, ModelAdminMixin,
         'gender': admin.VERTICAL,
         'identity_type': admin.VERTICAL,
         'is_dob_estimated': admin.VERTICAL,
-        'language': admin.VERTICAL,
         'study_questions': admin.VERTICAL,
         'verbal_script': admin.VERTICAL}
 

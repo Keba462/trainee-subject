@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .admin_site import trainee_subject_admin
+from django.views.generic.base import RedirectView
+
+app_name ='trainee_subject'
 
 urlpatterns = [
     path('admin/', trainee_subject_admin.urls),
+    path('',RedirectView.as_view(url='admin/'),name='home_url')
 ]
