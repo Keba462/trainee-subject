@@ -28,7 +28,7 @@ jobs:
         pip install -r requirements.txt
         pip install pycryptodome
         pip uninstall git+https://github.com/botswana-harvard/django-crypto-fields.git@f975c27f7ea69ca274976a3868c34f2d8983d550
-        pi install git+https://github.com/botswana-harvard/django-crypto-fields.git@f975c27f7ea69ca274976a3868c34f2d8983d550
+        pip install git+https://github.com/botswana-harvard/django-crypto-fields.git@f975c27f7ea69ca274976a3868c34f2d8983d550
     - name: Run Tests
       run: |
         python manage.py test
