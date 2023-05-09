@@ -1,10 +1,10 @@
 from django import forms
 from trainee_subject.models.subject_screening import SubjectScreening
-#from trainee_validations.form_validators import ScreeningFormValidator
+from trainee_validations.form_validators import SubjectScreeningFormValidator
 
 class SubjectScreeningForm(forms.ModelForm):
 
-    #form_validator_cls = ScreeningFormValidator
+    form_validator_cls = SubjectScreeningFormValidator
     
     screening_identifier = forms.CharField(
         label='Screening Identifier',

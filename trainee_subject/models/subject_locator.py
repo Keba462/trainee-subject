@@ -9,7 +9,7 @@ from edc_base.model_validators.phone import CellNumber
 from edc_base.sites import CurrentSiteManager, SiteModelMixin
 from edc_base.model_managers import HistoricalRecords
 from edc_base.model_mixins import BaseUuidModel
-from trainee_subject.action_item import SUBJECT_LOCATOR_ACTION
+from trainee_subject.action_items import SUBJECT_LOCATOR_ACTION
 from edc_constants.choices import YES_NO_NA
 from edc_locator.model_mixins import LocatorModelMixin, LocatorManager
 from edc_consent.model_mixins import RequiresConsentFieldsModelMixin

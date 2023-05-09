@@ -7,12 +7,12 @@ from trainee_subject.choices import IDENTITY_TYPE
 from trainee_subject.forms.forms_mixin import SubjectModelFormMixin
 
 from trainee_subject.models.subject_consent import SubjectConsent
-#from trainee_validations.form_validators import SubjectConsentFormValidator
+from trainee_validations.form_validators import SubjectConsentFormValidator
 
 
 class SubjectConsentForm(SubjectModelFormMixin, ConsentModelFormMixin):
 
-    #form_validator_cls = SubjectConsentFormValidator
+    form_validator_cls = SubjectConsentFormValidator
 
     subject_identifier = forms.CharField(
         label='Subject Identifier',

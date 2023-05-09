@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'edc_visit_schedule.apps.AppConfig',
     'edc_identifier.apps.AppConfig',
     'edc_senaite_interface.apps.AppConfig',
+    'trainee_validations.apps.AppConfig',
     'trainee_subject.apps.EdcDeviceAppConfig',
     'trainee_subject.apps.EdcFacilityAppConfig',
     'trainee_subject.apps.EdcAppointmentAppConfig',
