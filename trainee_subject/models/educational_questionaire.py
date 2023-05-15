@@ -1,12 +1,16 @@
 from django.db import models
 from edc_constants.choices import YES_NO
-from edc_base.model_fields import OtherCharField
-from ..choices import OCCUPATION, SALARY, WORK_TYPE, YES_NO_DW
+
+from trainee_subject.models.subject_visit import SubjectVisit
+from ..choices import OCCUPATION, SALARY, WORK_TYPE
+from edc_reference.model_mixins import ReferenceModelMixin
 from trainee_subject.models.model_mixins.crf_model_mixin import CrfModelMixin
 
 
-class EducationalQuestionaire(CrfModelMixin):
+class EducationalQuestionaire(CrfModelMixin,ReferenceModelMixin):
 
+    subject_visit = models.ForeignKey(SubjectVisit)
+   
     working = models.CharField(
         verbose_name= "Are you currently working ?",
         max_length=11,
@@ -33,3 +37,8 @@ class EducationalQuestionaire(CrfModelMixin):
         choices=SALARY,
 
     )
+
+
+    class Meta:
+        app_label = 'trainee_subject'
+        verbose_name = 'Educational Questionaire'

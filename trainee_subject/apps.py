@@ -8,6 +8,7 @@ from edc_appointment.appointment_config import AppointmentConfig
 from edc_appointment.apps import AppConfig as BaseEdcAppointmentAppConfig
 from edc_visit_tracking.apps import (AppConfig as BaseEdcVisitTrackingAppConfig)
 
+
 class AppConfig(DjangoConfig):
     name = 'trainee_subject'
     verbose_name = "Trainee Subject +Crfs"
@@ -47,3 +48,5 @@ class EdcVisitTrackingAppConfig(BaseEdcVisitTrackingAppConfig):
         visit_models = {
             'trainee_subject': (
                 'subject_visit', 'trainee_subject.subjectvisit')}
+        
+

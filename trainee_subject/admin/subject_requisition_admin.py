@@ -5,7 +5,7 @@ from edc_lab.admin import requisition_verify_fields
 from edc_lab.admin import requisition_verify_fieldset, requisition_status_fieldset
 from edc_model_admin import audit_fieldset_tuple
 from edc_senaite_interface.admin import SenaiteRequisitionAdminMixin
-from trainee_subject.admin.model_admin_mixin import CrfModelAdminMixin
+from trainee_subject.admin.model_admin_mixins import CrfModelAdminMixin
 from trainee_subject.forms.subject_requisition_form import SubjectRequisitionForm
 from trainee_subject.models.subject_requisition import SubjectRequisition
 from ..admin_site import trainee_subject_admin
@@ -27,7 +27,7 @@ requisition_identifier_fieldset = (
 
 
 @admin.register(SubjectRequisition, site=trainee_subject_admin)
-class CaregiverRequisitionAdmin( CrfModelAdminMixin,RequisitionAdminMixin,
+class SubjectRequisitionAdmin( CrfModelAdminMixin,RequisitionAdminMixin,
                                 SenaiteRequisitionAdminMixin,admin.ModelAdmin):
 
     form = SubjectRequisitionForm

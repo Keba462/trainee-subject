@@ -1,9 +1,13 @@
 from django.db import models
 from trainee_subject.choices import COMMUNITY_ACTIVITY, MAJOR_COMMUNITY_PROBLEMS, YES_NO_NA_DA,YES_NO_DK_DA
-from edc_constants.choices import YES_NO_NA
 from trainee_subject.models.model_mixins.crf_model_mixin import CrfModelMixin
+from edc_reference.model_mixins import ReferenceModelMixin
 
-class CommunityEngagement(CrfModelMixin):
+from trainee_subject.models.subject_visit import SubjectVisit
+
+class CommunityEngagement(CrfModelMixin,ReferenceModelMixin):
+
+    subject_visit = models.ForeignKey(SubjectVisit)
 
     community_activity = models.CharField(
         verbose_name= ("How active are you in community activities such as burial society,"),
@@ -34,3 +38,8 @@ class CommunityEngagement(CrfModelMixin):
         max_length=50,
         
     )
+
+    class Meta:
+        app_label = 'trainee_subject'
+        verbose_name = 'Community Engagement'
+        

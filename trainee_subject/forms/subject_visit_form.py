@@ -24,7 +24,7 @@ class VisitFormValidator(BaseVisitFormValidator):
 
                 reasons = ['missed_visit', 'fu_visit/contact']
 
-                if(appointment.visit_code == '1000' and reason in reasons):
+                if(appointment.visit_code == '1000T' and reason in reasons):
                     raise forms.ValidationError(
                         {'reason': 'Invalid visit reason'},
                         code=INVALID_ERROR)

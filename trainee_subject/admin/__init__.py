@@ -5,4 +5,5 @@ from .subject_locator_admin import SubjectLocatorAdmin
 from .education_questionaire_admin import EducationQuestionaireAdmin
 from .community_engagement_admin import CommunityEngagementAdmin
 from .demographics_admin import DemographicAdmin
-from .subject_requisition_admin import RequisitionAdminMixin
+from .subject_requisition_admin import SubjectRequisitionAdmin
+from .offschedule_admin import OffScheduleAdmin

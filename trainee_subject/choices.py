@@ -113,6 +113,11 @@ STUDY_SITES = (
     ('40', 'Gaborone'),
 )
 
+SMS_STATUS = (
+    ('sms_sent', 'SMS sent'),
+    ('sms_not_sent', 'SMS not sent'),
+)
+
 REASON_NOT_DRAWN = (
     ('collection_failed', 'Tried, but unable to obtain sample from patient'),
     ('absent', 'Patient did not attend visit'),
@@ -196,6 +201,17 @@ MARITAL_STATUS =(
     ("Married","Married"),
     ("Divorced","Divorced"),
     ("Widowed","Widowed")
+)
+
+REASON_FOR_EXIT = (
+    ('death', 'Patient death'),
+    ('ltfu', 'Patient lost to follow-up'),
+    ('eval_complete', 'Cancer evaluation complete'),
+    ('declines_further_eval',
+     'Patient or clinician declines further evaluation'),
+    ('patient_requests_removal', 'Patient requests removal from Potlako'),
+    ('clinician_requests_removal', 'Clinician requests removal from Potlako'),
+    (OTHER, 'Other (specify)'),
 )
 
 

@@ -3,13 +3,14 @@ from edc_model_admin import audit_fieldset_tuple
 from edc_visit_schedule.fieldsets import visit_schedule_fieldset_tuple
 from edc_visit_tracking.modeladmin_mixins import VisitModelAdminMixin
 from trainee_subject.admin.subject_consent_form import ModelAdminMixin
+from trainee_subject.models.subject_visit import SubjectVisit
 from ..admin_site import trainee_subject_admin
 from ..forms import subject_visit_form
-from ..models import subject_visit
 
 
 
-@admin.register(subject_visit.SubjectVisit, site=trainee_subject_admin)
+
+@admin.register(SubjectVisit, site=trainee_subject_admin)
 class SubjectVisitAdmin(
     VisitModelAdminMixin,ModelAdminMixin, admin.ModelAdmin, ):
 

@@ -12,11 +12,19 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import configparser
+import sys
+
+from django.core.management.color import color_style
+
+# from .logging import LOGGING
+style = color_style()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR =os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,12 +41,20 @@ DEVICE_ID = 2
 DEVICE_ROLE = ''
 
 APP_NAME = 'trainee_subject'
+ETC_DIR = os.path.join(BASE_DIR, 'etc')
+
+CONFIG_FILE = f'{APP_NAME}.ini'
+
+CONFIG_PATH = os.path.join(ETC_DIR, CONFIG_FILE)
+sys.stdout.write(style.SUCCESS(f'  * Reading config from {CONFIG_FILE}\n'))
+config = configparser.ConfigParser()
+config.read(CONFIG_PATH)
 
 #KEY_PATH = '/etc/traineeproject_subject/crypto_fields'
 
 ALLOWED_HOSTS = []
 
-ETC_DIR = os.path.join(BASE_DIR, 'etc')
+
 
 SITE_ID = 1
 DEFAULT_STUDY_SITE = 1
@@ -153,6 +169,8 @@ USE_I18N = True
 USE_TZ = True
 
 COUNTRY = 'botswana'
+
+COMMUNITIES = config['communities']
 
 # dashboards
 DASHBOARD_URL_NAMES = {

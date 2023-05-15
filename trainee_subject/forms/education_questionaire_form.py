@@ -1,6 +1,7 @@
 from django import forms
 from trainee_subject.models.educational_questionaire import EducationalQuestionaire
 from .forms_mixin import SubjectModelFormMixin
+from edc_form_validators import FormValidatorMixin
 from trainee_validations.form_validators import EducationQuestionaireValidationForm
 
 class EducationQuestionaireForm(SubjectModelFormMixin,forms.ModelForm):

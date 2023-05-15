@@ -1,8 +1,10 @@
 from django import forms
 from trainee_subject.models.subject_screening import SubjectScreening
+from edc_form_validators import FormValidatorMixin
 from trainee_validations.form_validators import SubjectScreeningFormValidator
 
-class SubjectScreeningForm(forms.ModelForm):
+
+class SubjectScreeningForm(FormValidatorMixin,forms.ModelForm):
 
     form_validator_cls = SubjectScreeningFormValidator
     

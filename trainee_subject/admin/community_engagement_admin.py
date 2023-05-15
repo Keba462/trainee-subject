@@ -1,5 +1,5 @@
 from django.contrib import admin
-from trainee_subject.admin.model_admin_mixin import CrfModelAdminMixin
+from trainee_subject.admin.model_admin_mixins import CrfModelAdminMixin
 from trainee_subject.forms.community_engagement_form import CommunityEngagementForm
 from trainee_subject.models.community_engagement import CommunityEngagement
 from ..admin_site import trainee_subject_admin

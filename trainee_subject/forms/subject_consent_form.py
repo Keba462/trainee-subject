@@ -5,7 +5,7 @@ from edc_consent.modelform_mixins import ConsentModelFormMixin
 from edc_form_validators import FormValidatorMixin
 from trainee_subject.choices import IDENTITY_TYPE
 from trainee_subject.forms.forms_mixin import SubjectModelFormMixin
-
+from edc_form_validators import FormValidatorMixin
 from trainee_subject.models.subject_consent import SubjectConsent
 from trainee_validations.form_validators import SubjectConsentFormValidator
 
