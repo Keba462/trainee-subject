@@ -34,6 +34,7 @@ class SubjectRequisition(
         RequiresConsentFieldsModelMixin, PreviousVisitModelMixin,RequisitionReferenceModelMixin,
         UpdatesRequisitionMetadataModelMixin,SearchSlugModelMixin,SenaiteRequisitionModelMixin,BaseUuidModel):
 
+    lab_profile_name = 'trainee_subject'
 
     subject_visit = models.ForeignKey(SubjectVisit, on_delete=PROTECT)
 
@@ -74,7 +75,6 @@ class SubjectRequisition(
         null=True,
         blank=True)
 
-#     on_site = CurrentSiteManager()
 
     objects = Manager()
 

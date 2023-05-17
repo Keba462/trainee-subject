@@ -1,13 +1,11 @@
 from django.db import models
 from trainee_subject.choices import HOUSEMATE, MARITAL_STATUS
 from trainee_subject.models.model_mixins.crf_model_mixin import CrfModelMixin
-from trainee_subject.models.subject_visit import SubjectVisit
-from edc_reference.model_mixins import ReferenceModelMixin
 
 
-class Demographic (CrfModelMixin,ReferenceModelMixin):
 
-    subject_visit = models.ForeignKey(SubjectVisit)
+class Demographic (CrfModelMixin):
+
 
     marital_status = models.CharField(
         verbose_name= "What is your marital status",

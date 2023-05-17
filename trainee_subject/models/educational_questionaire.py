@@ -1,15 +1,12 @@
 from django.db import models
 from edc_constants.choices import YES_NO
-
-from trainee_subject.models.subject_visit import SubjectVisit
 from ..choices import OCCUPATION, SALARY, WORK_TYPE
-from edc_reference.model_mixins import ReferenceModelMixin
 from trainee_subject.models.model_mixins.crf_model_mixin import CrfModelMixin
 
 
-class EducationalQuestionaire(CrfModelMixin,ReferenceModelMixin):
+class EducationalQuestionaire(CrfModelMixin):
 
-    subject_visit = models.ForeignKey(SubjectVisit)
+
    
     working = models.CharField(
         verbose_name= "Are you currently working ?",

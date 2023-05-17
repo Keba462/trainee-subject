@@ -1,5 +1,5 @@
 from trainee_subject.models.model_mixins.search_slug_model_mixin import SearchSlugModelMixin
-from trainee_subject.subject_identifier import ScreeningIdentifier
+from trainee_subject.screening_identifier import ScreeningIdentifier
 from ..eligibility import Eligibility
 from django.db import models
 from edc_base.model_managers import HistoricalRecords

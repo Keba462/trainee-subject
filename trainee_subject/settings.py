@@ -41,7 +41,7 @@ DEVICE_ID = 2
 DEVICE_ROLE = ''
 
 APP_NAME = 'trainee_subject'
-ETC_DIR = os.path.join(BASE_DIR, 'etc')
+ETC_DIR = os.path.join('/etc/', APP_NAME)
 
 CONFIG_FILE = f'{APP_NAME}.ini'
 
@@ -53,6 +53,9 @@ config.read(CONFIG_PATH)
 #KEY_PATH = '/etc/traineeproject_subject/crypto_fields'
 
 ALLOWED_HOSTS = []
+
+# EDC SMS configuration
+BASE_API_URL = config['edc_sms']['base_api_url']
 
 
 
@@ -77,13 +80,21 @@ INSTALLED_APPS = [
     'edc_protocol.apps.AppConfig',
     'edc_timepoint.apps.AppConfig',
     'edc_action_item.apps.AppConfig',
+    'edc_reference.apps.AppConfig',
+    'edc_metadata_rules.apps.AppConfig',
     'edc_lab.apps.AppConfig',
     'edc_consent.apps.AppConfig',
     'edc_visit_schedule.apps.AppConfig',
     'edc_identifier.apps.AppConfig',
+    'edc_registration.apps.AppConfig',
     'edc_senaite_interface.apps.AppConfig',
+    'trainee_reference.apps.AppConfig',
+    'trainee_metadata_rules.apps.AppConfig',
     'trainee_validations.apps.AppConfig',
+    'trainee_visit_schedule.apps.AppConfig',
     'trainee_subject.apps.EdcDeviceAppConfig',
+    'trainee_subject.apps.EdcSmsAppConfig',
+    'trainee_subject.apps.EdcMetadataAppConfig',
     'trainee_subject.apps.EdcFacilityAppConfig',
     'trainee_subject.apps.EdcAppointmentAppConfig',
     'trainee_subject.apps.EdcVisitTrackingAppConfig',
@@ -192,3 +203,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if 'test' in sys.argv:
+    class DisableMigrations:
+        def __contains__(self, item):
+            return True
+        
+        def __getitem__(self, item):
+            return None
+    
+    MIGRATION_MODULES = DisableMigrations()
+    PASSWORD_HASHERS = ('django.contrib.auth.hashers.MD5PasswordHasher',)
+    DEFAULT_FILE_STORAGE = 'inmemorystorage.InMemoryStorage'

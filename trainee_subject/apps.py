@@ -7,7 +7,9 @@ from edc_device.constants import CENTRAL_SERVER, CLIENT, NODE_SERVER
 from edc_appointment.appointment_config import AppointmentConfig
 from edc_appointment.apps import AppConfig as BaseEdcAppointmentAppConfig
 from edc_visit_tracking.apps import (AppConfig as BaseEdcVisitTrackingAppConfig)
-
+from edc_sms.apps import AppConfig as BaseEdcSmsAppConfig
+from edc_metadata.apps import AppConfig as BaseEdcMetadataAppConfig
+from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, LOST_VISIT
 
 class AppConfig(DjangoConfig):
     name = 'trainee_subject'
@@ -49,4 +51,19 @@ class EdcVisitTrackingAppConfig(BaseEdcVisitTrackingAppConfig):
             'trainee_subject': (
                 'subject_visit', 'trainee_subject.subjectvisit')}
         
+
+class EdcSmsAppConfig(BaseEdcSmsAppConfig):
+    locator_model = 'trainee_subject.subjectlocator'
+    consent_model = 'trainee_subject.subjectconsent'
+    sms_model = 'trainee_subject.sms'
+
+class EdcMetadataAppConfig(BaseEdcMetadataAppConfig):
+        reason_field = {'trainee_subject.subjectvisit': 'reason'}
+        other_visit_reasons = ['off study', 'deferred', 'death']
+        other_create_visit_reasons = [
+            'initial_visit/contact', 'fu_visit/contact',
+            'missed_visit', 'unscheduled_visit/contact']
+        create_on_reasons = [SCHEDULED, UNSCHEDULED] + other_create_visit_reasons
+        delete_on_reasons = [LOST_VISIT] + other_visit_reasons
+
 
