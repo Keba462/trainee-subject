@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     'edc_identifier.apps.AppConfig',
     'edc_registration.apps.AppConfig',
     'edc_senaite_interface.apps.AppConfig',
+    'trainee_labs.apps.AppConfig',
     'trainee_reference.apps.AppConfig',
     'trainee_metadata_rules.apps.AppConfig',
     'trainee_validations.apps.AppConfig',
