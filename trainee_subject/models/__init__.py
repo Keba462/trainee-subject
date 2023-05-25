@@ -10,3 +10,4 @@ from .onschedule import OnSchedule
 from .offschedule import OffSchedule
 from .subject_offstudy import SubjectOffStudy
 from .signals import  subject_consent_on_post_save
+from .subject_requisition_results import SubjectRequisitionResult,SubjectResultValue

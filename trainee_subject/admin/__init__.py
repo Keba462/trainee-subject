@@ -7,3 +7,4 @@ from .community_engagement_admin import CommunityEngagementAdmin
 from .demographics_admin import DemographicAdmin
 from .subject_requisition_admin import SubjectRequisitionAdmin
 from .offschedule_admin import OffScheduleAdmin
+from .subject_requisition_result_admin import SubjectRequisitionResultAdmin
