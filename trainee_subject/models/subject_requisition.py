@@ -92,7 +92,7 @@ class SubjectRequisition(
             self.protocol_number = edc_protocol_app_config.protocol_number
         self.report_datetime = self.requisition_datetime
         self.subject_identifier = self.subject_visit.subject_identifier
-        self.consent_model = 'trainee.subjectconsent'
+        self.consent_model = 'trainee_subject.subjectconsent'
         super().save(*args, **kwargs)
 
     def get_search_slug_fields(self):
