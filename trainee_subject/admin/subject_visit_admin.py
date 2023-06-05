@@ -6,13 +6,14 @@ from trainee_subject.admin.subject_consent_form import ModelAdminMixin
 from trainee_subject.models.subject_visit import SubjectVisit
 from ..admin_site import trainee_subject_admin
 from ..forms import subject_visit_form
+from .exportaction_mixin import ExportActionMixin
 
 
 
 
 @admin.register(SubjectVisit, site=trainee_subject_admin)
 class SubjectVisitAdmin(
-    VisitModelAdminMixin,ModelAdminMixin, admin.ModelAdmin, ):
+    VisitModelAdminMixin,ModelAdminMixin, admin.ModelAdmin):
 
     form = subject_visit_form.SubjectVisitForm
 

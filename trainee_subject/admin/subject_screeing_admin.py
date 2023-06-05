@@ -12,6 +12,7 @@ from edc_model_admin import (
 from edc_metadata import NextFormGetter
 from edc_model_admin.model_admin_audit_fields_mixin import (
     audit_fields, audit_fieldset_tuple)
+from .exportaction_mixin import ExportActionMixin
 
 class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
                       ModelAdminFormInstructionsMixin,
@@ -19,7 +20,7 @@ class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
                       ModelAdminAuditFieldsMixin, ModelAdminReadOnlyMixin,
                       ModelAdminInstitutionMixin,
                       ModelAdminRedirectOnDeleteMixin,
-                      ModelAdminSiteMixin):
+                      ModelAdminSiteMixin,ExportActionMixin):
                       
     list_per_page = 10
     date_hierarchy = 'modified'

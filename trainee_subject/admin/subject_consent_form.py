@@ -13,11 +13,12 @@ from edc_model_admin import (
 from edc_model_admin import ModelAdminBasicMixin, ModelAdminReadOnlyMixin
 from simple_history.admin import SimpleHistoryAdmin
 from .admin_filter_mixin import FacilityListFilter
+from .exportaction_mixin import ExportActionMixin
 
 class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
                       ModelAdminFormAutoNumberMixin, ModelAdminRevisionMixin,
                       ModelAdminReplaceLabelTextMixin, ModelAdminAuditFieldsMixin,
-                      ModelAdminInstitutionMixin, ModelAdminReadOnlyMixin):
+                      ModelAdminInstitutionMixin, ModelAdminReadOnlyMixin,ExportActionMixin):
 
     list_per_page = 10
     date_hierarchy = 'modified'

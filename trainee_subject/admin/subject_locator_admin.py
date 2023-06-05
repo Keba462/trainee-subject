@@ -9,6 +9,7 @@ from edc_model_admin import (
     ModelAdminFormAutoNumberMixin, ModelAdminAuditFieldsMixin,
     ModelAdminReadOnlyMixin, ModelAdminInstitutionMixin,
     ModelAdminRedirectOnDeleteMixin)
+from .exportaction_mixin import ExportActionMixin
 from edc_subject_dashboard import ModelAdminSubjectDashboardMixin
 from trainee_subject.forms.subject_locator_form import SubjectLocatorForm
 
@@ -23,7 +24,7 @@ class ModelAdminMixin(
         ModelAdminFormAutoNumberMixin, ModelAdminRevisionMixin,
         ModelAdminAuditFieldsMixin, ModelAdminReadOnlyMixin,
         ModelAdminInstitutionMixin, ModelAdminRedirectOnDeleteMixin,
-        ModelAdminSubjectDashboardMixin):
+        ModelAdminSubjectDashboardMixin,ExportActionMixin):
 
     list_per_page = 10
     date_hierarchy = 'modified'
